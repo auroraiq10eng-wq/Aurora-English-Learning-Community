@@ -298,7 +298,7 @@
         (L(p.topic) ? '<p class="session-topic">' + esc(L(p.topic)) + "</p>" : "") + "</div>" +
         (L(p.description) ? '<p class="muted">' + esc(L(p.description)) + "</p>" : "") +
         (hl.length ? '<div><h4 class="h3">' + t("highlights") + "</h4><ul>" + hl.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul></div>" : "") +
-        (photos.length ? '<div class="prev-photos">' + photos.map(function (src) { return '<img src="' + esc(src) + '" alt="' + esc(L(p.title)) + '" loading="lazy">'; }).join("") + "</div>" : "") +
+        (photos.length ? '<div class="prev-photos">' + photos.map(function (src) { return '<a href="' + esc(src) + '" target="_blank" rel="noopener"><img src="' + esc(src) + '" alt="' + esc(L(p.title)) + '" loading="lazy"></a>'; }).join("") + "</div>" : "") +
         "</article>";
     }).join("") + "</div>";
   }

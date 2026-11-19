@@ -42,7 +42,16 @@ window.AURORA = {
        photos: ["assets/img/sessions/s1-1.jpg"]
      },
      --------------------------------------------------------------- */
-  previousSessions: [],
+  previousSessions: [
+    {
+      title:       { ar: "جلسة بمكتبة كلية الهندسة", en: "Session at the College of Engineering library" },
+      date: "",
+      topic:       { ar: "", en: "" },
+      description: { ar: "جلسة من جلسات أورورا بمكتبة كلية الهندسة، كعدنا ويا بعض وسولفنا بالإنكليزي.", en: "One of our Aurora sessions at the College of Engineering library, where we sat together and talked in English." },
+      highlights:  { ar: [], en: [] },
+      photos: ["assets/img/sessions/img_7910.jpg", "assets/img/sessions/img_7909.jpg"]
+    }
+  ],
 
   /* ---------------------------------------------------------------
      3) الفريق  —  Team

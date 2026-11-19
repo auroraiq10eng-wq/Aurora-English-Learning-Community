@@ -304,8 +304,11 @@ html[lang="en"] .session-title { font-family: var(--serif); font-weight: 600; li
 .prev-date { color: var(--green); font-size: .95rem; }
 .prev h3 { font-size: 1.4rem; margin: 0; }
 html[lang="en"] .prev h3 { font-family: var(--serif); }
-.prev-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
-.prev-photos img { aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; }
+.prev-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.prev-photos a { display: block; border-radius: 16px; overflow: hidden; }
+.prev-photos img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 40%; transition: transform .3s; }
+.prev-photos a:hover img { transform: scale(1.03); }
+@media (min-width: 760px) { .prev-photos { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); } }
 .prev ul { margin: 0; padding-inline-start: 20px; color: var(--muted); }
 
 /* Activities */
