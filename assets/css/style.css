@@ -150,7 +150,7 @@ html[dir="rtl"] .brand { direction: ltr; }
 .menu[hidden] { display: none; }
 .menu a { color: var(--white); text-decoration: none; padding: 10px 4px; border-bottom: 1px solid var(--line); }
 
-@media (min-width: 1080px) {
+@media (min-width: 960px) {
   .nav { display: flex; }
   .nav + .bar-actions { margin-inline-start: 8px; }
   .menu-btn { display: none; }
@@ -407,20 +407,6 @@ html[lang="en"] .act h3 { font-family: var(--serif); font-size: 1.2rem; }
   min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0; cursor: pointer;
   background: var(--green); color: var(--midnight); font-weight: 600;
 }
-
-/* ---------- Join ---------- */
-.join-grid { display: grid; gap: 16px; }
-.join-card {
-  padding: clamp(24px, 4vw, 36px); border-radius: 28px; display: grid; gap: 14px; align-content: start;
-  background: var(--surface); border: 1px solid var(--line);
-}
-.join-card:first-child { background: linear-gradient(150deg, rgba(185,163,245,.22), rgba(48,40,63,.95) 60%); border-color: rgba(185,163,245,.3); }
-.join-card:last-child  { background: linear-gradient(150deg, rgba(114,214,176,.16), rgba(48,40,63,.95) 60%); border-color: rgba(114,214,176,.25); }
-.join-card h3 { margin: 0; font-size: 1.4rem; font-weight: 650; }
-html[lang="en"] .join-card h3 { font-family: var(--serif); font-weight: 600; }
-.join-card p { color: var(--muted); }
-.join-card .btn { justify-self: start; margin-top: 6px; }
-.join-card { max-width: 760px; }
 
 /* ---------- Feedback ---------- */
 .fb-panel {

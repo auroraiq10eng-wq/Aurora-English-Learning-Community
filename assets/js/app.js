@@ -21,7 +21,6 @@
     "nav.team": { ar: "الفريق", en: "Team" },
     "nav.gallery": { ar: "لحظاتنا", en: "Our moments" },
     "nav.ask": { ar: "اسأل أورورا", en: "Ask Aurora" },
-    "nav.join": { ar: "انضم إلينا", en: "Join us" },
     "nav.contact": { ar: "تواصل معنا", en: "Contact" },
     "nav.feedback": { ar: "ملاحظاتكم", en: "Feedback" },
     "sec.feedback": { ar: "ملاحظاتكم", en: "Your feedback" },
@@ -52,7 +51,6 @@
     "sec.activities": { ar: "أنشطة وتحديات", en: "Activities & challenges" },
     "sec.team": { ar: "فريق أورورا", en: "Our team" },
     "sec.gallery": { ar: "لحظاتنا", en: "Our moments" },
-    "sec.join": { ar: "انضم إلى أورورا", en: "Join Aurora" },
     "sec.contact": { ar: "تواصل معنا", en: "Contact us" },
 
     "status.open": { ar: "التسجيل مفتوح", en: "Registration open" },
@@ -92,9 +90,6 @@
     "ask.where": { ar: "مكان الجلسة القادمة: ", en: "Next session venue: " },
     "ask.see": { ar: "تفاصيل الجلسة", en: "Session details" },
 
-    "join.attendTitle": { ar: "احضر جلستنا القادمة", en: "Come to our next session" },
-    "join.attendText": { ar: "ما تحتاج تكون بطلاقة. تعال تمارس، تتعلم، وتتعرف على ناس يشاركونك نفس الهدف.", en: "You don't need to be fluent. Come to practise, learn, and meet people who share the same goal." },
-    "join.attendSoon": { ar: "تابع الإعلان", en: "Follow the announcement" },
     "join.teamMsg": { ar: "راسلنا على إنستغرام", en: "Message us on Instagram" },
 
     "c.instagram": { ar: "إنستغرام", en: "Instagram" },
@@ -325,13 +320,7 @@
     }).join("") + "</div>";
   }
 
-  /* ---------- Render: join + contact ---------- */
-  function renderJoin() {
-    var attendBtn = sessionOpen() ? regBtn(t("s.register"), "btn-primary") : btn(links.instagram, t("join.attendSoon"), "btn-primary");
-    $("joinGrid").innerHTML =
-      '<article class="join-card"><h3>' + t("join.attendTitle") + "</h3><p>" + t("join.attendText") + "</p>" + attendBtn + "</article>";
-  }
-
+  /* ---------- Render: contact ---------- */
   function contactItems() {
     var out = [];
     if (links.instagram) out.push({ k: "instagram", href: links.instagram, val: "@" + links.instagram.replace(/\/+$/, "").split("/").pop() });
@@ -563,7 +552,7 @@
 
   function renderAll() {
     renderCopy(); renderHero(); renderSession(); renderPrevious();
-    renderTeam(); renderGallery(); renderJoin(); renderFeedback(); renderContact(); renderChat();
+    renderTeam(); renderGallery(); renderFeedback(); renderContact(); renderChat();
   }
 
   $("langBtn").addEventListener("click", function () { setLang(lang === "ar" ? "en" : "ar"); });
