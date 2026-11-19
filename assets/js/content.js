@@ -64,7 +64,18 @@ window.AURORA = {
        caption: { ar: "", en: "" }
      },
      --------------------------------------------------------------- */
-  gallery: [],
+  gallery: [
+    {
+      src: "assets/img/gallery/img_7864.jpg",
+      title:   { ar: "جلسة محادثة تفاعلية", en: "Interactive speaking session" },
+      caption: { ar: "نقاش جماعي بالإنكليزية حول الطاولة، نتبادل فيه الأفكار ونتدرّب على المحادثة.", en: "A group discussion in English around the table, sharing ideas and practising conversation." }
+    },
+    {
+      src: "assets/img/gallery/img_6031.jpg",
+      title:   { ar: "من عروض أورورا", en: "From an Aurora presentation" },
+      caption: { ar: "لحظة من أحد عروض أورورا، نشارك فيها أفكارنا مع الحضور.", en: "A moment from one of our presentations, sharing our ideas with the audience." }
+    }
+  ],
 
   /* ---------------------------------------------------------------
      5) روابط التواصل  —  Contact links
