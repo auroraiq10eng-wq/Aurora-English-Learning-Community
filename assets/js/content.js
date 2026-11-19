@@ -72,7 +72,7 @@ window.AURORA = {
      --------------------------------------------------------------- */
   links: {
     instagram: "https://www.instagram.com/Aurora._iq/",
-    email: "auroraiq10.eng@gmail.com",
+    email: "Auroraiq10@gmail.com",
     tiktok: "",
     telegram: "",
     volunteerForm: ""   // رابط نموذج التطوع في الفريق (Google Form)
