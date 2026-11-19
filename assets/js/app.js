@@ -298,7 +298,7 @@
         (L(p.topic) ? '<p class="session-topic">' + esc(L(p.topic)) + "</p>" : "") + "</div>" +
         (L(p.description) ? '<p class="muted">' + esc(L(p.description)) + "</p>" : "") +
         (hl.length ? '<div><h4 class="h3">' + t("highlights") + "</h4><ul>" + hl.map(function (h) { return "<li>" + esc(h) + "</li>"; }).join("") + "</ul></div>" : "") +
-        (photos.length ? '<div class="prev-photos">' + photos.map(function (src) { return '<a href="' + esc(src) + '" target="_blank" rel="noopener"><img src="' + esc(src) + '" alt="' + esc(L(p.title)) + '" loading="lazy"></a>'; }).join("") + "</div>" : "") +
+        (photos.length ? '<div class="prev-photos">' + photos.map(function (src) { return '<div class="ph"><img src="' + esc(src) + '" alt="' + esc(L(p.title)) + '" loading="lazy" draggable="false"></div>'; }).join("") + "</div>" : "") +
         "</article>";
     }).join("") + "</div>";
   }
@@ -323,7 +323,7 @@
     var list = (D.gallery || []).filter(function (g) { return safeUrl(g.src); });
     if (!list.length) { $("galleryList").innerHTML = emptyBlock("gal.empty", links.instagram, "gal.open"); return; }
     $("galleryList").innerHTML = '<div class="gal-grid">' + list.map(function (g) {
-      return '<figure class="gal"><img src="' + esc(g.src) + '" alt="' + esc(L(g.title)) + '" loading="lazy">' +
+      return '<figure class="gal"><img src="' + esc(g.src) + '" alt="' + esc(L(g.title)) + '" loading="lazy" draggable="false">' +
         "<figcaption><strong>" + esc(L(g.title)) + "</strong>" + (L(g.caption) ? "<span>" + esc(L(g.caption)) + "</span>" : "") + "</figcaption></figure>";
     }).join("") + "</div>";
   }

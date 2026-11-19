@@ -311,12 +311,12 @@ html[lang="en"] .prev h3 { font-family: var(--serif); }
   scrollbar-width: none; -webkit-overflow-scrolling: touch;
 }
 .prev-photos::-webkit-scrollbar { display: none; }
-.prev-photos a { flex: 0 0 84%; scroll-snap-align: center; display: block; border-radius: 20px; overflow: hidden; background: var(--surface); }
+.prev-photos .ph { flex: 0 0 84%; scroll-snap-align: center; border-radius: 20px; overflow: hidden; background: var(--surface); }
+.prev-photos img, .gal img { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 .prev-photos img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 55%; transition: transform .3s; }
-.prev-photos a:hover img { transform: scale(1.03); }
 @media (min-width: 760px) {
   .prev-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; overflow: visible; margin-inline: 0; padding: 0; }
-  .prev-photos a { flex: none; }
+  .prev-photos .ph { flex: none; }
   .prev-photos img { aspect-ratio: 1; }
 }
 .prev ul { margin: 0; padding-inline-start: 20px; color: var(--muted); }
