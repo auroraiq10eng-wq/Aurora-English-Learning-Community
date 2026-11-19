@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>أورورا | Aurora English Learning Community</title>
+  <meta name="description" content="أورورا مجتمع تعليمي حديث لتعلّم اللغة الإنكليزية بطريقة تفاعلية وممتعة في الموصل. Aurora is a modern English learning community. Learn. Connect. Grow.">
+  <meta name="theme-color" content="#171321">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aurora | أورورا">
+  <meta property="og:description" content="English is not just a subject. It’s a way to connect with the world.">
+  <meta property="og:image" content="https://auroraiq10eng-wq.github.io/Aurora-English-Learning-Community/assets/img/og-image.png">
+  <meta property="og:url" content="https://auroraiq10eng-wq.github.io/Aurora-English-Learning-Community/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/readex-pro-arabic-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-t="ui.skip">تخطَّ إلى المحتوى</a>
+  <div class="sky" aria-hidden="true"></div>
+
+  <header class="bar" id="top">
+    <div class="bar-inner">
+      <a class="brand" href="#home" aria-label="Aurora">
+        <picture>
+          <source srcset="assets/img/aurora-logo.webp" type="image/webp">
+          <img src="assets/img/aurora-logo.png" alt="Aurora" width="640" height="196">
+        </picture>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="#about"   data-t="nav.about">من نحن</a>
+        <a href="#sessions" data-t="nav.sessions">الجلسات</a>
+        <a href="#gallery" data-t="nav.gallery">لحظاتنا</a>
+        <a href="#ask"     data-t="nav.ask">اسأل أورورا</a>
+        <a href="#join"    data-t="nav.join">انضم إلينا</a>
+        <a href="#feedback" data-t="nav.feedback">ملاحظاتكم</a>
+      </nav>
+      <div class="bar-actions">
+        <button class="lang" type="button" id="langBtn" lang="en">English</button>
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="menu">
+          <span class="menu-icon" aria-hidden="true"></span>
+          <span class="sr" data-t="ui.menu">القائمة</span>
+        </button>
+      </div>
+    </div>
+    <nav class="menu" id="menu" aria-label="Sections" hidden>
+      <a href="#home"       data-t="nav.home">الرئيسية</a>
+      <a href="#about"      data-t="nav.about">من نحن</a>
+      <a href="#goals"      data-t="nav.goals">أهدافنا</a>
+      <a href="#sessions"   data-t="nav.sessions">الجلسة القادمة</a>
+      <a href="#previous"   data-t="nav.previous">جلسات سابقة</a>
+      <a href="#activities" data-t="nav.activities">أنشطة وتحديات</a>
+      <a href="#team"       data-t="nav.team">الفريق</a>
+      <a href="#gallery"    data-t="nav.gallery">لحظاتنا</a>
+      <a href="#ask"        data-t="nav.ask">اسأل أورورا</a>
+      <a href="#join"       data-t="nav.join">انضم إلينا</a>
+      <a href="#feedback"   data-t="nav.feedback">ملاحظاتكم</a>
+      <a href="#contact"    data-t="nav.contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- 1. Home -->
+    <section class="hero" id="home">
+      <div class="ripple" aria-hidden="true">
+        <span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="ring"></span>
+        <picture>
+          <source srcset="assets/img/aurora-mark.webp" type="image/webp">
+          <img class="mark" src="assets/img/aurora-mark.png" alt="" width="360" height="360">
+        </picture>
+      </div>
+      <p class="hero-name" data-t="hero.name">مجتمع أورورا لتعلّم اللغة الإنكليزية</p>
+      <h1 class="hero-title" data-c="slogan"></h1>
+      <p class="hero-tag" lang="en" dir="ltr">Learn. Connect. Grow.</p>
+      <div class="hero-actions" id="heroActions"></div>
+    </section>
+
+    <!-- 2. About + 3. Goals -->
+    <section class="section about" id="about">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.about">من نحن</h2>
+        <div class="about-body" id="aboutBody"></div>
+        <div class="mv">
+          <div class="mv-item">
+            <h3 class="h3" data-t="sec.mission">رسالتنا</h3>
+            <p data-c="mission"></p>
+          </div>
+          <div class="mv-item">
+            <h3 class="h3" data-t="sec.vision">رؤيتنا</h3>
+            <p data-c="vision"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section goals" id="goals">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.goals">أهدافنا</h2>
+        <ul class="goal-list" id="goalList"></ul>
+      </div>
+    </section>
+
+    <!-- 4. Upcoming session -->
+    <section class="section sessions" id="sessions">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.sessions">الجلسة القادمة</h2>
+        <div id="nextSession"></div>
+      </div>
+    </section>
+
+    <!-- 5. Previous sessions -->
+    <section class="section previous" id="previous">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.previous">جلسات سابقة</h2>
+        <div id="previousList"></div>
+      </div>
+    </section>
+
+    <!-- 6. Activities -->
+    <section class="section activities" id="activities">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.activities">أنشطة وتحديات</h2>
+        <ul class="act-list" id="actList"></ul>
+      </div>
+    </section>
+
+    <!-- 7. Team -->
+    <section class="section team" id="team">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.team">فريق أورورا</h2>
+        <div id="teamList"></div>
+      </div>
+    </section>
+
+    <!-- 8. Gallery -->
+    <section class="section gallery" id="gallery">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.gallery">لحظاتنا</h2>
+        <div id="galleryList"></div>
+      </div>
+    </section>
+
+    <!-- 9. Ask Aurora -->
+    <section class="section ask" id="ask">
+      <div class="wrap">
+        <div class="chat" id="chat">
+          <div class="chat-head">
+            <img src="assets/img/favicon-192.png" alt="" width="44" height="44">
+            <div>
+              <h2 class="chat-title" lang="en">Ask Aurora</h2>
+              <p class="chat-sub" data-t="ask.sub">عندك سؤال؟ جوابك هنا.</p>
+            </div>
+          </div>
+          <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+          <div class="chat-chips" id="chatChips" role="group"></div>
+          <form class="chat-form" id="chatForm" autocomplete="off">
+            <label class="sr" for="chatInput" data-t="ask.label">اكتب سؤالك</label>
+            <input id="chatInput" type="text" maxlength="200" data-tp="ask.placeholder" placeholder="اكتب سؤالك هنا…">
+            <button type="submit" data-t="ask.send">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Join -->
+    <section class="section join" id="join">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.join">انضم إلى أورورا</h2>
+        <div class="join-grid" id="joinGrid"></div>
+      </div>
+    </section>
+
+    <!-- Feedback -->
+    <section class="section feedback" id="feedback">
+      <div class="wrap">
+        <div class="fb-panel">
+          <div class="fb-copy">
+            <h2 class="h2" data-t="sec.feedback">ملاحظاتكم</h2>
+            <p class="fb-text" data-t="fb.text"></p>
+            <p class="fb-note" data-t="fb.note"></p>
+          </div>
+          <div class="fb-box" id="fbBox"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2 class="h2" data-t="sec.contact">تواصل معنا</h2>
+        <ul class="contact-list" id="contactList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <img src="assets/img/aurora-logo.webp" alt="Aurora" width="200" height="61">
+      <p class="foot-slogan" data-c="slogan"></p>
+      <p class="foot-tag" lang="en" dir="ltr">Learn. Connect. Grow.</p>
+      <p class="foot-copy">© <span id="year"></span> Aurora</p>
+    </div>
+  </footer>
+
+  <dialog class="form-dialog" id="formDialog" aria-labelledby="formTitle">
+    <div class="fd-head">
+      <h2 id="formTitle" data-t="form.title">التسجيل في جلسة أورورا</h2>
+      <button type="button" class="fd-close" id="formClose">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        <span class="sr" data-t="form.close">إغلاق</span>
+      </button>
+    </div>
+    <div class="fd-body">
+      <p class="fd-loading" data-t="form.loading">جارٍ تحميل النموذج…</p>
+      <iframe id="formFrame" data-tt="form.title" title="التسجيل في جلسة أورورا"></iframe>
+    </div>
+    <a class="fd-alt" id="formAlt" href="#" target="_blank" rel="noopener" data-t="form.newTab">افتح النموذج في صفحة جديدة</a>
+  </dialog>
+
+  <a class="ask-fab" href="#ask" id="askFab">
+    <img src="assets/img/favicon-32.png" alt="" width="22" height="22">
+    <span data-t="nav.ask">اسأل أورورا</span>
+  </a>
+
+  <noscript><p class="noscript">يحتاج هذا الموقع إلى تفعيل JavaScript. This site needs JavaScript enabled.</p></noscript>
+
+  <script src="assets/js/content.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
