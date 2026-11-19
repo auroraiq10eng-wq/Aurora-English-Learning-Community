@@ -57,7 +57,8 @@ body {
   overflow-x: hidden;
 }
 html[lang="en"] body { line-height: 1.65; }
-img { max-width: 100%; height: auto; display: block; }
+img { max-width: 100%; height: auto; display: block; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; -webkit-user-drag: none; }
+.brand, .ask-fab { -webkit-touch-callout: none; }
 a { color: var(--lavender); text-underline-offset: .2em; }
 p { margin: 0; }
 button, input, textarea, select { font: inherit; color: inherit; }

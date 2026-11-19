@@ -593,6 +593,14 @@
 
   $("year").textContent = new Date().getFullYear();
 
+  /* Block the long-press / right-click "save image" menu on all pictures and the logo link */
+  function isProtected(el) { return el && el.closest && el.closest("img, picture, .brand, .ask-fab, .chat-head, .ripple"); }
+  document.addEventListener("contextmenu", function (e) { if (isProtected(e.target)) e.preventDefault(); });
+  document.addEventListener("dragstart", function (e) { if (isProtected(e.target)) e.preventDefault(); });
+  function lockImages() { document.querySelectorAll("img").forEach(function (i) { i.setAttribute("draggable", "false"); }); }
+  lockImages();
+  if ("MutationObserver" in window) new MutationObserver(lockImages).observe(document.getElementById("main"), { childList: true, subtree: true });
+
   var urlLang = (location.search.match(/[?&]lang=(ar|en)/) || [])[1];
   setLang(urlLang || store("aurora-lang") || "ar");
 })();
