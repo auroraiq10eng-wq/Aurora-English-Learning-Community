@@ -103,6 +103,7 @@
 
     "c.instagram": { ar: "إنستغرام", en: "Instagram" },
     "c.email": { ar: "البريد الإلكتروني", en: "Email" },
+    "c.whatsapp": { ar: "واتساب", en: "WhatsApp" },
     "c.tiktok": { ar: "تيك توك", en: "TikTok" },
     "c.telegram": { ar: "تيليغرام", en: "Telegram" },
     "c.copy": { ar: "نسخ", en: "Copy" },
@@ -127,6 +128,7 @@
 
   var ICON = {
     instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>',
+    whatsapp: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z"/><path d="M9 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.2 2.8 2.8l.6-.5c.2-.2.4-.2.6-.1l1.6.7c.3.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.6.5-3.2-.3a9 9 0 0 1-3.7-3.7c-.8-1.6-.6-2.6-.3-3.2z"/></svg>',
     email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>',
     tiktok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.4 2.6 2.2 4.4 5 4.6"/></svg>',
     telegram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M21 4 3 11l6 2.2L18 7l-7 7.4V20l3.3-3.6L18 19z"/></svg>',
@@ -340,6 +342,8 @@
   function contactItems() {
     var out = [];
     if (links.instagram) out.push({ k: "instagram", href: links.instagram, val: "@" + links.instagram.replace(/\/+$/, "").split("/").pop() });
+    var wa = String(links.whatsapp || "").replace(/\D/g, "");
+    if (wa) out.push({ k: "whatsapp", href: "https://wa.me/" + (wa.charAt(0) === "0" ? "964" + wa.slice(1) : wa), val: links.whatsapp });
     if (links.email) out.push({ k: "email", href: "mailto:" + links.email, val: links.email });
     if (links.tiktok) out.push({ k: "tiktok", href: links.tiktok, val: links.tiktok.replace(/^https?:\/\/(www\.)?/, "") });
     if (links.telegram) out.push({ k: "telegram", href: links.telegram, val: links.telegram.replace(/^https?:\/\/(www\.)?/, "") });

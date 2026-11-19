@@ -93,6 +93,7 @@ window.AURORA = {
   links: {
     instagram: "https://www.instagram.com/Aurora._iq/",
     email: "Auroraiq10@gmail.com",
+    whatsapp: "0773 334 4657",   // رقم واتساب كما يظهر في الموقع
     tiktok: "",
     telegram: "",
     volunteerForm: ""   // رابط نموذج التطوع في الفريق (Google Form)
@@ -304,10 +305,10 @@ window.AURORA = {
       id: "contact",
       q: { ar: "شلون أتواصل ويا أورورا؟", en: "How can I contact Aurora?" },
       a: {
-        ar: "تكدر تتواصل ويانا من خلال حساب أورورا الرسمي، الموقع، أو البريد الإلكتروني.",
-        en: "You can contact Aurora through our official Instagram account, website, or email."
+        ar: "تكدر تتواصل ويانا من خلال حساب أورورا الرسمي، واتساب، الموقع، أو البريد الإلكتروني.",
+        en: "You can contact Aurora through our official Instagram account, WhatsApp, website, or email."
       },
-      keywords: ["تواصل", "اتواصل", "رقم", "ايميل", "إيميل", "بريد", "انستا", "انستغرام", "contact", "email", "instagram", "reach", "message"]
+      keywords: ["تواصل", "اتواصل", "رقم", "واتساب", "واتس", "whatsapp", "ايميل", "إيميل", "بريد", "انستا", "انستغرام", "contact", "email", "instagram", "reach", "message"]
     },
     {
       id: "suggest",
