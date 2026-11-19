@@ -76,7 +76,6 @@
 
     "prev.empty": { ar: "ستظهر هنا جلساتنا السابقة مع صورها وأبرز لحظاتها.", en: "Our previous sessions will appear here, with photos and highlights." },
     "team.empty": { ar: "سنعرّفكم هنا قريباً على الفريق الذي يصنع أورورا.", en: "You'll meet the team behind Aurora here soon." },
-    "team.join": { ar: "انضم للفريق", en: "Join the team" },
     "gal.empty": { ar: "صور لحظاتنا في الطريق. شاهد أحدثها على إنستغرام.", en: "Photos of our moments are on their way. See the latest on Instagram." },
     "gal.open": { ar: "شاهد على إنستغرام", en: "View on Instagram" },
     "highlights": { ar: "أبرز اللحظات", en: "Highlights" },
@@ -96,9 +95,6 @@
     "join.attendTitle": { ar: "احضر جلستنا القادمة", en: "Come to our next session" },
     "join.attendText": { ar: "ما تحتاج تكون بطلاقة. تعال تمارس، تتعلم، وتتعرف على ناس يشاركونك نفس الهدف.", en: "You don't need to be fluent. Come to practise, learn, and meet people who share the same goal." },
     "join.attendSoon": { ar: "تابع الإعلان", en: "Follow the announcement" },
-    "join.teamTitle": { ar: "كن جزءاً من فريق أورورا", en: "Become part of the Aurora team" },
-    "join.teamText": { ar: "تحب تساعد بالفعاليات، التصوير، الإعلام، أو التنظيم؟ نرحب بيك ويانا.", en: "Want to help with activities, photography, media, or organisation? We'd love to have you." },
-    "join.teamBtn": { ar: "قدّم للتطوع", en: "Apply to volunteer" },
     "join.teamMsg": { ar: "راسلنا على إنستغرام", en: "Message us on Instagram" },
 
     "c.instagram": { ar: "إنستغرام", en: "Instagram" },
@@ -307,8 +303,7 @@
 
   function renderTeam() {
     var list = D.team || [];
-    var joinHref = links.volunteerForm || "#join";
-    if (!list.length) { $("teamList").innerHTML = emptyBlock("team.empty", joinHref, "team.join"); return; }
+    if (!list.length) { $("teamList").innerHTML = emptyBlock("team.empty", links.instagram, "s.follow"); return; }
     $("teamList").innerHTML = '<div class="team-grid">' + list.map(function (m) {
       var ig = safeUrl(m.instagram);
       var handle = ig ? "@" + ig.replace(/\/+$/, "").split("/").pop() : "";
@@ -333,10 +328,8 @@
   /* ---------- Render: join + contact ---------- */
   function renderJoin() {
     var attendBtn = sessionOpen() ? regBtn(t("s.register"), "btn-primary") : btn(links.instagram, t("join.attendSoon"), "btn-primary");
-    var teamBtn = safeUrl(links.volunteerForm) ? btn(links.volunteerForm, t("join.teamBtn"), "btn-green") : btn(links.instagram, t("join.teamMsg"), "btn-green");
     $("joinGrid").innerHTML =
-      '<article class="join-card"><h3>' + t("join.attendTitle") + "</h3><p>" + t("join.attendText") + "</p>" + attendBtn + "</article>" +
-      '<article class="join-card"><h3>' + t("join.teamTitle") + "</h3><p>" + t("join.teamText") + "</p>" + teamBtn + "</article>";
+      '<article class="join-card"><h3>' + t("join.attendTitle") + "</h3><p>" + t("join.attendText") + "</p>" + attendBtn + "</article>";
   }
 
   function contactItems() {
@@ -439,7 +432,7 @@
         if (L(S.location)) extra = t("ask.where") + L(S.location);
         break;
       case "team":
-        acts = safeUrl(links.volunteerForm) ? btn(links.volunteerForm, t("join.teamBtn"), "btn-green") : btn(links.instagram, t("join.teamMsg"), "btn-ghost");
+        acts = btn("#sessions", t("hero.next"), "btn-ghost");
         break;
       case "feedback":
         acts = btn("#feedback", t("fb.see"), "btn-green");

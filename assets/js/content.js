@@ -285,10 +285,10 @@ window.AURORA = {
     },
     {
       id: "team",
-      q: { ar: "شلون أصير جزء من فريق أورورا؟", en: "How can I become part of the Aurora team?" },
+      q: { ar: "أكدر أصير جزء من فريق أورورا؟", en: "Can I become part of the Aurora team?" },
       a: {
-        ar: "إذا مهتم تنضم للفريق أو تساعد بالفعاليات، التصوير، الإعلام، التنظيم، أو غيرها، تكدر تتواصل ويانا من خلال حسابات أورورا الرسمية.",
-        en: "If you are interested in volunteering, helping with activities, photography, media, organisation, or other team responsibilities, you can contact Aurora through its official platforms."
+        ar: "حالياً فريق أورورا مكتمل وما نستقبل أعضاء جدد. بس تكدر تشاركنا بجلساتنا وتكون جزء من مجتمعنا، وإذا فتحنا المجال مستقبلاً راح نعلن عبر حساباتنا الرسمية.",
+        en: "The Aurora team is complete for now, so we're not taking new members. You're welcome to join our sessions and be part of the community, and we'll announce on our official accounts if that changes."
       },
       keywords: ["فريق", "الفريق", "تطوع", "متطوع", "اشتغل وياكم", "تصوير", "اعلام", "تنظيم", "team", "volunteer", "staff", "photography", "media", "help"]
     },

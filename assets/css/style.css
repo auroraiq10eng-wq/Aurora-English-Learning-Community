@@ -420,7 +420,7 @@ html[lang="en"] .act h3 { font-family: var(--serif); font-size: 1.2rem; }
 html[lang="en"] .join-card h3 { font-family: var(--serif); font-weight: 600; }
 .join-card p { color: var(--muted); }
 .join-card .btn { justify-self: start; margin-top: 6px; }
-@media (min-width: 800px) { .join-grid { grid-template-columns: 1fr 1fr; } }
+.join-card { max-width: 760px; }
 
 /* ---------- Feedback ---------- */
 .fb-panel {
