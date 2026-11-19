@@ -117,8 +117,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 html[dir="rtl"] .brand { direction: ltr; }
 .nav { display: none; gap: 4px; margin-inline-start: auto; }
 .nav a {
-  color: var(--muted); text-decoration: none; font-size: .95rem;
-  padding: 6px 12px; border-radius: 999px; transition: color .2s, background .2s;
+  color: var(--muted); text-decoration: none; font-size: .95rem; white-space: nowrap;
+  padding: 6px 11px; border-radius: 999px; transition: color .2s, background .2s;
 }
 .nav a:hover { color: var(--white); background: rgba(217,204,255,.08); }
 .bar-actions { display: flex; align-items: center; gap: 8px; margin-inline-start: auto; }
@@ -150,7 +150,7 @@ html[dir="rtl"] .brand { direction: ltr; }
 .menu[hidden] { display: none; }
 .menu a { color: var(--white); text-decoration: none; padding: 10px 4px; border-bottom: 1px solid var(--line); }
 
-@media (min-width: 900px) {
+@media (min-width: 1080px) {
   .nav { display: flex; }
   .nav + .bar-actions { margin-inline-start: 8px; }
   .menu-btn { display: none; }
