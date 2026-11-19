@@ -44,10 +44,10 @@ window.AURORA = {
      --------------------------------------------------------------- */
   previousSessions: [
     {
-      title:       { ar: "جلسة بمكتبة كلية الهندسة", en: "Session at the College of Engineering library" },
+      title:       { ar: "جلسة بمكتبة جامع الحدباء", en: "Session at Al-Hadba Mosque Library" },
       date: "",
       topic:       { ar: "", en: "" },
-      description: { ar: "جلسة من جلسات أورورا بمكتبة كلية الهندسة، كعدنا ويا بعض وسولفنا بالإنكليزي.", en: "One of our Aurora sessions at the College of Engineering library, where we sat together and talked in English." },
+      description: { ar: "جلسة من جلسات أورورا بمكتبة جامع الحدباء، كعدنا ويا بعض وسولفنا بالإنكليزي.", en: "One of our Aurora sessions at Al-Hadba Mosque Library, where we sat together and talked in English." },
       highlights:  { ar: [], en: [] },
       photos: ["assets/img/sessions/img_7910.jpg", "assets/img/sessions/img_7909.jpg"]
     }
