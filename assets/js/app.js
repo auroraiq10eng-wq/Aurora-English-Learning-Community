@@ -42,7 +42,7 @@
     "hero.next": { ar: "الجلسة القادمة", en: "Next session" },
     "hero.ask": { ar: "اسأل أورورا", en: "Ask Aurora" },
 
-    "sec.about": { ar: "من نحن", en: "About Aurora" },
+    "sec.about": { ar: "من نحن؟", en: "About Aurora" },
     "sec.mission": { ar: "رسالتنا", en: "Our mission" },
     "sec.vision": { ar: "رؤيتنا", en: "Our vision" },
     "sec.goals": { ar: "أهدافنا", en: "Our goals" },

@@ -27,7 +27,7 @@ window.AURORA = {
     location:    { ar: "", en: "" },
     description: { ar: "", en: "" },
     // رسالة قصيرة تظهر في بطاقة الجلسة ويقولها البوت عند السؤال عن موعد الجلسة
-    announcement: { ar: "جلستنا القادمة يوم الجمعة بتاريخ 20 Nov، سارعوا بالتسجيل!", en: "Our next session is on Friday, 20 Nov. Hurry and register!" },
+    announcement: { ar: "جلستنا القادمة يوم الجمعة بتاريخ ⁦20/Nov⁩، سارعوا بالتسجيل!", en: "Our next session is on Friday, 20/Nov. Hurry and register!" },
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLScIcWets8NzW5H1UqBI-tXek4wf1j7qGBGFVyKbU8lcGKhNwg/viewform",
     poster: ""
   },
