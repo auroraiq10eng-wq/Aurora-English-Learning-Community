@@ -278,6 +278,15 @@ html[lang="en"] .h3 { font-family: var(--serif); font-size: 1.3rem; }
 html[lang="en"] .session-title { font-family: var(--serif); font-weight: 600; line-height: 1.15; }
 .session-topic { color: var(--purple); font-size: 1.1rem; }
 .session-announce { color: var(--green); font-size: 1.15rem; font-weight: 600; }
+.countdown {
+  justify-self: start; display: flex; align-items: center; gap: 14px; padding: 10px 18px; border-radius: 16px;
+  background: rgba(114,214,176,.1); border: 1px solid rgba(114,214,176,.35);
+}
+.countdown span { color: var(--muted); font-size: .95rem; }
+.countdown strong { font-size: 1.9rem; font-weight: 650; color: var(--green); font-variant-numeric: tabular-nums; letter-spacing: .02em; line-height: 1.2; }
+.status[data-s="live"] { background: rgba(114,214,176,.15); color: var(--green); }
+.status[data-s="live"]::before { animation: livepulse 1.4s ease-in-out infinite; }
+@keyframes livepulse { 50% { opacity: .25; } }
 .facts { display: grid; gap: 10px; margin: 4px 0; padding: 0; }
 .facts div { display: flex; gap: 12px; align-items: baseline; }
 .facts dt { min-width: 64px; color: var(--faint); font-size: .92rem; }

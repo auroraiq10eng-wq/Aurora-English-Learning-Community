@@ -57,6 +57,12 @@
     "status.soon": { ar: "يُعلن قريباً", en: "Announcing soon" },
     "status.full": { ar: "اكتمل العدد", en: "Fully booked" },
     "status.closed": { ar: "التسجيل مغلق", en: "Registration closed" },
+    "status.live": { ar: "بدأت الجلسة", en: "Session started" },
+    "s.liveTitle": { ar: "انطلقت جلسة اليوم!", en: "Today's session has started!" },
+    "s.liveText": { ar: "انسد التقديم على الجلسة لأن جلسة اليوم بدت. شكراً لكل اللي سجّلوا، ونشوفكم بالجلسة الجاية!", en: "Registration is closed because today's session has started. Thanks to everyone who signed up, and see you at the next one!" },
+    "s.countdown": { ar: "تبدأ الجلسة بعد", en: "Session starts in" },
+    "ask.live": { ar: "انطلقت جلسة اليوم! انسد التقديم عليها، وراح نعلن عن الجلسة الجاية بحسابات أورورا الرسمية.", en: "Today's session has started! Registration is closed, and we'll announce the next session on Aurora's official accounts." },
+    "ask.regClosed": { ar: "انسد التقديم على جلسة اليوم لأن الجلسة بدت. تابعونا حتى تعرفون موعد الجلسة الجاية.", en: "Registration for today's session is closed because it has started. Follow us to hear about the next one." },
     "s.date": { ar: "التاريخ", en: "Date" },
     "s.time": { ar: "الوقت", en: "Time" },
     "s.place": { ar: "المكان", en: "Place" },
@@ -209,7 +215,19 @@
   /* ---------- Session helpers ---------- */
   var S = D.nextSession || {};
   var links = D.links || {};
-  function sessionOpen() { return S.status === "open" && !!safeUrl(S.registrationLink); }
+  function startTime() { var d = S.startsAt ? Date.parse(S.startsAt) : NaN; return isNaN(d) ? null : d; }
+  function started() { var st = startTime(); return st !== null && Date.now() >= st; }
+  function sessionOpen() { return S.status === "open" && !!safeUrl(S.registrationLink) && !started(); }
+  function fmtLeft(ms) {
+    var s = Math.max(0, Math.ceil(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+    function p(n) { return (n < 10 ? "0" : "") + n; }
+    return (h ? h + ":" + p(m) : p(m)) + ":" + p(sec);
+  }
+  function countdownHtml() {
+    var st = startTime();
+    if (st === null || started() || !sessionOpen()) return "";
+    return '<div class="countdown"><span>' + t("s.countdown") + '</span><strong id="cdTime" dir="ltr">' + fmtLeft(st - Date.now()) + "</strong></div>";
+  }
   function sessionHasDetails() { return !!(L(S.title) || S.date); }
 
   /* ---------- Render: static copy ---------- */
@@ -242,7 +260,13 @@
       : '<img class="placeholder" src="assets/img/aurora-mark.png" alt="" width="120" height="120">';
 
     var body;
-    if (!sessionHasDetails() && sessionOpen()) {
+    if (started()) {
+      body =
+        '<span class="status" data-s="live">' + t("status.live") + "</span>" +
+        '<h3 class="session-title">' + t("s.liveTitle") + "</h3>" +
+        '<p class="session-note">' + t("s.liveText") + "</p>" +
+        btn(links.instagram, t("s.follow"), "btn-ghost");
+    } else if (!sessionHasDetails() && sessionOpen()) {
       body =
         '<span class="status" data-s="open">' + t("status.open") + "</span>" +
         '<h3 class="session-title">' + t("s.openTitle") + "</h3>" +
@@ -268,6 +292,7 @@
         '<h3 class="session-title">' + esc(L(S.title) || t(sessionOpen() ? "s.openTitle" : "s.soonTitle")) + "</h3>" +
         (L(S.topic) ? '<p class="session-topic">' + esc(L(S.topic)) + "</p>" : "") +
         (L(S.announcement) ? '<p class="session-announce">' + esc(L(S.announcement)) + "</p>" : "") +
+        countdownHtml() +
         (facts ? '<dl class="facts">' + facts + "</dl>" : "") +
         (L(S.description) ? '<p class="session-note">' + esc(L(S.description)) + "</p>" : "") +
         action;
@@ -406,10 +431,12 @@
     var text = L(item.a), extra = "", acts = "";
     switch (item.id) {
       case "register":
+        if (started()) { text = t("ask.regClosed"); acts = btn(links.instagram, t("s.follow"), "btn-ghost"); break; }
         if (sessionOpen()) { extra = t("ask.regOpen"); acts = regBtn(t("s.register"), "btn-green"); }
         else acts = btn(links.instagram, t("s.follow"), "btn-ghost");
         break;
       case "when":
+        if (started()) { text = t("ask.live"); acts = btn(links.instagram, t("s.follow"), "btn-ghost"); break; }
         if (L(S.announcement)) { text = L(S.announcement); acts = btn("#sessions", t("ask.see"), "btn-ghost"); }
         else if (sessionHasDetails()) { text = t("ask.when") + sessionLine(); acts = btn("#sessions", t("ask.see"), "btn-ghost"); }
         else acts = btn(links.instagram, t("s.follow"), "btn-ghost");
@@ -588,6 +615,14 @@
   function lockImages() { document.querySelectorAll("img").forEach(function (i) { i.setAttribute("draggable", "false"); }); }
   lockImages();
   if ("MutationObserver" in window) new MutationObserver(lockImages).observe(document.getElementById("main"), { childList: true, subtree: true });
+
+  /* Live countdown: ticks every second and flips the page when the session starts */
+  var wasStarted = started();
+  setInterval(function () {
+    var st = startTime(); if (st === null) return;
+    if (!wasStarted && Date.now() >= st) { wasStarted = true; renderSession(); renderHero(); return; }
+    var el = $("cdTime"); if (el) el.textContent = fmtLeft(st - Date.now());
+  }, 1000);
 
   var urlLang = (location.search.match(/[?&]lang=(ar|en)/) || [])[1];
   setLang(urlLang || store("aurora-lang") || "ar");
