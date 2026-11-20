@@ -69,7 +69,7 @@
     "s.time": { ar: "الوقت", en: "Time" },
     "s.place": { ar: "المكان", en: "Place" },
     "s.register": { ar: "سجّل الآن", en: "Register now" },
-    "s.soonTitle": { ar: "جلستنا القادمة في الطريق", en: "Our next session is on its way" },
+    "s.soonTitle": { ar: "انتظرونا بجلسات جاية قريباً!", en: "Stay tuned, new sessions are coming soon!" },
     "s.soonText": { ar: "نعلن الموعد والموضوع ورابط التسجيل على إنستغرام أولاً. تابعنا حتى لا يفوتك الإعلان.", en: "We announce the date, topic, and registration link on Instagram first. Follow us so you don't miss it." },
     "s.closedText": { ar: "التسجيل لهذه الجلسة مغلق. تابعنا على إنستغرام لتعرف موعد الجلسة التي بعدها.", en: "Registration for this session is closed. Follow us on Instagram to hear about the next one." },
     "s.follow": { ar: "تابع أورورا على إنستغرام", en: "Follow Aurora on Instagram" },

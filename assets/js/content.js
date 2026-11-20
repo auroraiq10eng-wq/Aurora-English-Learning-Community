@@ -19,17 +19,17 @@ window.AURORA = {
      poster:  مسار صورة البوستر    مثال: "assets/img/sessions/session-2.jpg"
      --------------------------------------------------------------- */
   nextSession: {
-    status: "open",
+    status: "soon",
     title:       { ar: "", en: "" },
     topic:       { ar: "", en: "" },
-    date: "2026-11-20",
+    date: "",
     time: "",
     // وقت بدء الجلسة بتوقيت بغداد: يظهر عداد تنازلي، وعند الوصول يُغلق التسجيل تلقائياً
-    startsAt: "2026-11-20T16:10:00+03:00",
+    startsAt: "",   // مثال: "2026-12-05T16:00:00+03:00"
     location:    { ar: "", en: "" },
     description: { ar: "", en: "" },
     // رسالة قصيرة تظهر في بطاقة الجلسة ويقولها البوت عند السؤال عن موعد الجلسة
-    announcement: { ar: "جلستنا القادمة يوم الجمعة بتاريخ ⁦20/Nov⁩، سارعوا بالتسجيل!", en: "Our next session is on Friday, 20/Nov. Hurry and register!" },
+    announcement: { ar: "", en: "" },
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLScIcWets8NzW5H1UqBI-tXek4wf1j7qGBGFVyKbU8lcGKhNwg/viewform",
     poster: ""
   },
@@ -273,8 +273,8 @@ window.AURORA = {
       id: "when",
       q: { ar: "إمتى الجلسة الجاية؟", en: "When is the next Aurora session?" },
       a: {
-        ar: "موعد الجلسة القادمة وتفاصيلها راح تنعلن عبر حسابات أورورا الرسمية.",
-        en: "Our next session is coming soon! The date, time, location, and registration details will be announced on our official platforms."
+        ar: "انتظرونا بجلسات جاية قريباً! راح نعلن موعد الجلسة الجاية وتفاصيلها عبر حسابات أورورا الرسمية.",
+        en: "Stay tuned, new sessions are coming soon! We'll announce the next date and details on Aurora's official accounts."
       },
       keywords: ["امتى", "إمتى", "متى", "موعد", "وقت", "تاريخ", "الجاية", "القادمة", "الجايه", "when", "next session", "date", "time", "schedule"]
     },
