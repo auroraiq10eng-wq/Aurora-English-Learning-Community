@@ -12,6 +12,8 @@
   var UI = {
     "ui.skip":  { ar: "تخطَّ إلى المحتوى", en: "Skip to content" },
     "ui.menu":  { ar: "القائمة", en: "Menu" },
+    "ui.fsEnter": { ar: "ملء الشاشة", en: "Full screen" },
+    "ui.fsExit":  { ar: "الخروج من ملء الشاشة", en: "Exit full screen" },
     "nav.home": { ar: "الرئيسية", en: "Home" },
     "nav.about": { ar: "من نحن", en: "About" },
     "nav.goals": { ar: "أهدافنا", en: "Our goals" },
@@ -564,6 +566,29 @@
   /* ==========================================================
      Language, menu, floating button
      ========================================================== */
+  /* ---------- Full screen ---------- */
+  var fsBtn = $("fsBtn"), docEl = document.documentElement;
+  function fsActive() { return !!(document.fullscreenElement || document.webkitFullscreenElement); }
+  function updateFs() {
+    var on = fsActive(), label = t(on ? "ui.fsExit" : "ui.fsEnter");
+    fsBtn.setAttribute("aria-pressed", String(on));
+    fsBtn.setAttribute("title", label);
+    $("fsLabel").textContent = label;
+  }
+  if (document.fullscreenEnabled || document.webkitFullscreenEnabled) {
+    fsBtn.hidden = false;
+    fsBtn.addEventListener("click", function () {
+      try {
+        var p;
+        if (fsActive()) p = (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        else p = (docEl.requestFullscreen || docEl.webkitRequestFullscreen).call(docEl);
+        if (p && p.catch) p.catch(function () {});
+      } catch (err) { /* browser refused: nothing to do */ }
+    });
+    document.addEventListener("fullscreenchange", updateFs);
+    document.addEventListener("webkitfullscreenchange", updateFs);
+  }
+
   function setLang(next) {
     readFb();
     lang = next === "en" ? "en" : "ar";
@@ -576,6 +601,7 @@
     b.setAttribute("lang", lang === "ar" ? "en" : "ar");
     b.setAttribute("aria-label", lang === "ar" ? "Switch to English" : "التبديل إلى العربية");
     renderAll();
+    if (fsBtn) updateFs();
     store("aurora-lang", lang);
   }
 

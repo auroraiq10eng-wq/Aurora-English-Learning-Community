@@ -1,0 +1,17 @@
+{
+  "name": "Aurora — English Learning Community",
+  "short_name": "Aurora",
+  "description": "مجتمع أورورا لتعلّم اللغة الإنكليزية · Learn. Connect. Grow.",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#171321",
+  "theme_color": "#171321",
+  "icons": [
+    { "src": "assets/img/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/img/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -127,6 +127,15 @@ html[dir="rtl"] .brand { direction: ltr; }
   padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: .92rem;
 }
 .lang:hover { border-color: var(--purple); }
+.fs-btn {
+  width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
+  background: transparent; color: var(--lavender); cursor: pointer; display: grid; place-items: center;
+}
+.fs-btn[hidden] { display: none; }
+.fs-btn:hover { border-color: var(--purple); }
+.fs-btn svg { width: 20px; height: 20px; }
+.fs-btn .i-exit, .fs-btn[aria-pressed="true"] .i-enter { display: none; }
+.fs-btn[aria-pressed="true"] .i-exit { display: block; }
 .lang[lang="ar"] { font-family: var(--sans); }
 .menu-btn {
   width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line);
