@@ -265,8 +265,9 @@
       else action = btn(links.instagram, t("s.follow"), "btn-ghost");
       body =
         '<span class="status" data-s="' + status + '">' + t("status." + status) + "</span>" +
-        '<h3 class="session-title">' + esc(L(S.title)) + "</h3>" +
+        '<h3 class="session-title">' + esc(L(S.title) || t(sessionOpen() ? "s.openTitle" : "s.soonTitle")) + "</h3>" +
         (L(S.topic) ? '<p class="session-topic">' + esc(L(S.topic)) + "</p>" : "") +
+        (L(S.announcement) ? '<p class="session-announce">' + esc(L(S.announcement)) + "</p>" : "") +
         (facts ? '<dl class="facts">' + facts + "</dl>" : "") +
         (L(S.description) ? '<p class="session-note">' + esc(L(S.description)) + "</p>" : "") +
         action;
@@ -409,7 +410,8 @@
         else acts = btn(links.instagram, t("s.follow"), "btn-ghost");
         break;
       case "when":
-        if (sessionHasDetails()) { text = t("ask.when") + sessionLine(); acts = btn("#sessions", t("ask.see"), "btn-ghost"); }
+        if (L(S.announcement)) { text = L(S.announcement); acts = btn("#sessions", t("ask.see"), "btn-ghost"); }
+        else if (sessionHasDetails()) { text = t("ask.when") + sessionLine(); acts = btn("#sessions", t("ask.see"), "btn-ghost"); }
         else acts = btn(links.instagram, t("s.follow"), "btn-ghost");
         if (sessionOpen()) acts = regBtn(t("s.register"), "btn-green") + acts;
         break;
