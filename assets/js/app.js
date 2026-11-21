@@ -326,8 +326,14 @@
 
   function renderTeam() {
     var list = D.team || [];
-    if (!list.length) { $("teamList").innerHTML = emptyBlock("team.empty", links.instagram, "s.follow"); return; }
-    $("teamList").innerHTML = '<div class="team-grid">' + list.map(function (m) {
+    var tp = D.teamPhoto || {};
+    var photo = safeUrl(tp.src)
+      ? '<figure class="team-photo"><img src="' + esc(tp.src) + '" alt="' + esc(L(tp.caption) || t("sec.team")) + '" loading="lazy" draggable="false">' +
+        (L(tp.caption) ? "<figcaption>" + esc(L(tp.caption)) + "</figcaption>" : "") + "</figure>"
+      : "";
+    if (!list.length) { $("teamList").innerHTML = photo || emptyBlock("team.empty", links.instagram, "s.follow"); return; }
+    if (photo) photo = photo.replace('class="team-photo"', 'class="team-photo team-photo--top"');
+    $("teamList").innerHTML = photo + '<div class="team-grid">' + list.map(function (m) {
       var ig = safeUrl(m.instagram);
       var handle = ig ? "@" + ig.replace(/\/+$/, "").split("/").pop() : "";
       return '<article class="member">' +
