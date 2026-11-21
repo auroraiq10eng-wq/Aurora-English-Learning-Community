@@ -71,7 +71,7 @@ window.AURORA = {
 
   /* صورة الفريق الجماعية — تظهر في قسم "فريق أورورا" */
   teamPhoto: {
-    src: "assets/img/team/aurora-team.jpg",
+    src: "",   // مخفية مؤقتاً — لإرجاعها: "assets/img/team/aurora-team.jpg"
     caption: { ar: "هذا التيم الي يصنع أورورا", en: "This is the team behind Aurora" }
   },
 
